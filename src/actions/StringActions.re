@@ -1,0 +1,1 @@
+type action = SayHello(string);

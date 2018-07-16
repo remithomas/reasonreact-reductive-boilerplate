@@ -1,5 +1,7 @@
 # ReasonReact-reductive-boilerplate
 
+> Currently in `WIP`: this is an example of how to use reductive in reason.
+
 ## Run Project
 
 ```sh
