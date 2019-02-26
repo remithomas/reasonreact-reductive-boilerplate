@@ -5,9 +5,11 @@
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "webpack": "webpack -w",
-    "webpack:production": "NODE_ENV=production webpack"
+    "webpack:production": "NODE_ENV=production webpack",
+    "prevalidate": "npm run build",
+    "validate": "npm test"
   },
   "keywords": [
     "BuckleScript"
@@ -15,14 +17,20 @@
   "author": "Rémi THOMAS",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "reason-react": ">=0.4.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "reason-react": ">=0.5.3",
     "reductive": "^1.0.0"
   },
   "devDependencies": {
-    "bs-platform": "^4.0.0",
-    "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.10"
+    "bs-platform": "^4.0.18",
+    "husky": "^1.3.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run validate"
+    }
   }
 }
